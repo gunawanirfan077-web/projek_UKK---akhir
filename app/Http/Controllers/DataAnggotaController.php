@@ -8,24 +8,20 @@ use Illuminate\Support\Facades\Storage;
 
 class DataAnggotaController extends Controller
 {
-    public function index(Request $request)
+    // 🔹 Halaman daftar anggota
+    public function index()
     {
-        if ($request->has('search') && $request->search != '') {
-            $data = DataAnggota::where('nama', 'LIKE', $request->search . '%')
-                ->orderBy('id', 'asc')
-                ->get();
-        } else {
-            $data = DataAnggota::orderBy('id', 'asc')->get();
-        }
-
+        $data = DataAnggota::orderBy('id', 'asc')->get();
         return view('admin.data_anggota.index', compact('data'));
     }
 
+    // 🔹 Halaman tambah anggota
     public function create()
     {
         return view('admin.data_anggota.create');
     }
 
+    // 🔹 Simpan anggota baru
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -46,18 +42,14 @@ class DataAnggotaController extends Controller
         return redirect()->route('data_anggota.index')->with('success', 'Data anggota berhasil ditambahkan!');
     }
 
-    public function show($id)
-    {
-        $anggota = DataAnggota::findOrFail($id);
-        return view('admin.data_anggota.show', compact('anggota'));
-    }
-
+    // 🔹 Halaman edit anggota
     public function edit($id)
     {
         $anggota = DataAnggota::findOrFail($id);
         return view('admin.data_anggota.edit', compact('anggota'));
     }
 
+    // 🔹 Update anggota
     public function update(Request $request, $id)
     {
         $anggota = DataAnggota::findOrFail($id);
@@ -83,6 +75,7 @@ class DataAnggotaController extends Controller
         return redirect()->route('data_anggota.index')->with('success', 'Data anggota berhasil diperbarui!');
     }
 
+    // 🔹 Hapus anggota
     public function destroy($id)
     {
         $anggota = DataAnggota::findOrFail($id);

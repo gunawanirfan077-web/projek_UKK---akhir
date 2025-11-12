@@ -7,19 +7,12 @@ use App\Models\Rapat;
 
 class AdminController extends Controller
 {
-     public function rapat(Request $request)
+    // 🔹 Halaman daftar rapat (tanpa search)
+    public function rapat()
     {
-        if ($request->has('search') && $request->search != '') {
-            $rapat = Rapat::where('nama_rapat', 'LIKE', $request->search . '%')
-                ->orderBy('tanggal', 'asc')
-                ->get();
-        } else {
-            $rapat = Rapat::orderBy('tanggal', 'asc')->get();
-        }
-
+        $rapat = Rapat::orderBy('tanggal', 'asc')->get();
         return view('admin.rapat.index', compact('rapat'));
     }
-
 
     // 🔹 Menampilkan form tambah rapat
     public function createRapat()
@@ -40,13 +33,6 @@ class AdminController extends Controller
         Rapat::create($request->all());
 
         return redirect()->route('rapat.index')->with('success', 'Rapat berhasil ditambahkan!');
-    }
-
-    // 🔹 Menampilkan detail rapat (lihat data)
-    public function showRapat($id)
-    {
-        $rapat = Rapat::findOrFail($id);
-        return view('admin.rapat.show', compact('rapat'));
     }
 
     // 🔹 Menampilkan form edit

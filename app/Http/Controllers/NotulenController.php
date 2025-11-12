@@ -7,26 +7,20 @@ use Illuminate\Http\Request;
 
 class NotulenController extends Controller
 {
-    public function index(Request $request)
+    // 🔹 Tampilkan daftar notulen (tanpa search)
+    public function index()
     {
-        // 🔍 Search by judul (huruf depan)
-        if ($request->has('search') && $request->search != '') {
-            $notulen = \App\Models\Notulen::where('judul', 'LIKE', $request->search . '%')
-                ->orderBy('id', 'asc')
-                ->get();
-        } else {
-            $notulen = \App\Models\Notulen::orderBy('id', 'asc')->get();
-        }
-
+        $notulen = Notulen::orderBy('id', 'asc')->get();
         return view('admin.notulen.index', compact('notulen'));
     }
 
-
+    // 🔹 Halaman tambah notulen
     public function create()
     {
         return view('admin.notulen.create');
     }
 
+    // 🔹 Simpan notulen baru
     public function store(Request $request)
     {
         $request->validate([
@@ -39,21 +33,25 @@ class NotulenController extends Controller
         ]);
 
         Notulen::create($request->all());
+
         return redirect()->route('notulen.index')->with('success', 'Notulen berhasil ditambahkan!');
     }
 
+    // 🔹 Lihat detail notulen
     public function show($id)
     {
         $notulen = Notulen::findOrFail($id);
         return view('admin.notulen.show', compact('notulen'));
     }
 
+    // 🔹 Halaman edit notulen
     public function edit($id)
     {
         $notulen = Notulen::findOrFail($id);
         return view('admin.notulen.edit', compact('notulen'));
     }
 
+    // 🔹 Update data notulen
     public function update(Request $request, $id)
     {
         $notulen = Notulen::findOrFail($id);
@@ -68,13 +66,16 @@ class NotulenController extends Controller
         ]);
 
         $notulen->update($request->all());
+
         return redirect()->route('notulen.index')->with('success', 'Notulen berhasil diperbarui!');
     }
 
+    // 🔹 Hapus notulen
     public function destroy($id)
     {
         $notulen = Notulen::findOrFail($id);
         $notulen->delete();
+
         return redirect()->route('notulen.index')->with('danger', 'Notulen berhasil dihapus!');
     }
 }
