@@ -7,25 +7,22 @@
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/user.css') }}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-3" href="#">
-        <img src="{{ asset('img/2.jpg') }}" alt="Logo 1">
-        <img src="{{ asset('img/2.png') }}" alt="Logo 2">
+        <img src="{{ asset('img/2.jpg') }}" alt="Logo 1" width="50">
+        <img src="{{ asset('img/2.png') }}" alt="Logo 2" width="50">
         <span>OSIS SMP N 5 Pekalongan</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/user/dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="/user/dashboard">Beranda</a></li>
           <li class="nav-item"><a class="nav-link" href="/user/anggota">Anggota</a></li>
-          <li class="nav-item"><a class="nav-link" href="/user/program">Rapat</a></li>
+          <li class="nav-item"><a class="nav-link" href="/user/rapat">Rapat</a></li>
           <li class="nav-item"><a class="nav-link" href="/user/program">Program</a></li>
           <li class="nav-item"><a class="nav-link" href="/user/evaluasi">Evaluasi</a></li>
           <li class="nav-item"><a class="nav-link" href="/user/notulen">Notulen</a></li>
@@ -36,16 +33,16 @@
   </nav>
 
   <!-- Isi Halaman -->
-  <div class="container mt-4">
+  <main class="flex-grow-1">
     @yield('content')
-  </div>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="bg-primary text-white text-center py-3 mt-auto">
     <p class="mb-0">&copy; {{ date('Y') }} OSIS SMP Negeri 5 Pekalongan</p>
   </footer>
 
-  <!-- Bootstrap JS (Offline) -->
+  <!-- JS -->
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

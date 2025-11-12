@@ -3,32 +3,54 @@
 @section('title', 'Data Anggota')
 
 @section('content')
-<h3 class="text-center mb-4 text-primary fw-bold">👥 Data Anggota OSIS</h3>
+<div class="container-fluid mt-4 mb-5">
+  <div class="card shadow border-0">
+    <div class="card-header bg-primary text-white text-center py-3">
+      <h4 class="mb-0">👥 Data Anggota OSIS SMP N 5 Pekalongan</h4>
+    </div>
 
-<div class="row justify-content-center">
-  @forelse ($data as $anggota)
-    <div class="col-md-4 col-lg-3 mb-4">
-      <div class="card border-0 shadow-sm text-center h-100">
-        <div class="card-body">
-          <!-- Foto -->
-          @if ($anggota->foto)
-            <img src="{{ asset('storage/' . $anggota->foto) }}"
-                 alt="{{ $anggota->nama }}"
-                 class="rounded-circle mb-3"
-                 width="120" height="120"
-                 style="object-fit: cover;">
-          @endif
-
-          <h5 class="fw-bold mb-1">{{ $anggota->nama }}</h5>
-          <p class="text-muted mb-1">{{ $anggota->jabatan }}</p>
-          <p class="small text-secondary mb-0">📞 {{ $anggota->no_hp ?? '-' }}</p>
+    <div class="card-body">
+      @if ($data->isEmpty())
+        <div class="text-center text-muted py-4">
+          <p>Belum ada data anggota.</p>
         </div>
-      </div>
+      @else
+        <div class="table-responsive">
+          <table class="table table-bordered text-center align-middle">
+            <thead class="table-primary">
+              <tr>
+                <th>No</th>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>No. HP</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($data as $index => $anggota)
+              <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>
+                  @if ($anggota->foto)
+                    <img src="{{ asset('storage/' . $anggota->foto) }}"
+                         alt="{{ $anggota->nama }}"
+                         width="60" height="60"
+                         class="rounded-circle"
+                         style="object-fit: cover;">
+                  @else
+                    <span class="text-muted">-</span>
+                  @endif
+                </td>
+                <td>{{ $anggota->nama }}</td>
+                <td>{{ $anggota->jabatan }}</td>
+                <td>{{ $anggota->no_hp ?? '-' }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      @endif
     </div>
-  @empty
-    <div class="text-center text-muted">
-      <p>Belum ada data anggota.</p>
-    </div>
-  @endforelse
+  </div>
 </div>
 @endsection
