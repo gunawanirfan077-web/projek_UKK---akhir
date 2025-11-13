@@ -54,6 +54,7 @@
                         </span>
                     </td>
                     <td>
+                        <a href="{{ route('program.show', $p->id) }}" class="btn btn-info btn-sm me-1">Lihat</a>
                         <a href="{{ route('program.edit', $p->id) }}" class="btn btn-warning btn-sm me-1">Edit</a>
                         <form action="{{ route('program.destroy', $p->id) }}" method="POST" class="d-inline">
                             @csrf

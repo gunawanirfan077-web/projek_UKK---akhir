@@ -14,6 +14,13 @@ class ProgramController extends Controller
         return view('admin.program.index', compact('programs'));
     }
 
+    // 🔹 Tampilkan detail program kerja (show)
+    public function show($id)
+    {
+        $program = Program::findOrFail($id);
+        return view('admin.program.show', compact('program'));
+    }
+
     // 🔹 Halaman tambah program kerja
     public function create()
     {

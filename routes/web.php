@@ -44,6 +44,8 @@ Route::post('/program', [ProgramController::class, 'store'])->name('program.stor
 Route::get('/program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit');
 Route::put('/program/{id}', [ProgramController::class, 'update'])->name('program.update');
 Route::delete('/program/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');
+Route::get('/program/{id}', [ProgramController::class, 'show'])->name('program.show');
+
 
 // Evaluasi Routes
 Route::get('/evaluasi', [EvaluasiController::class, 'index'])->name('evaluasi.index');

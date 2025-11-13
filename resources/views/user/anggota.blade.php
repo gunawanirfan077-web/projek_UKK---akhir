@@ -19,8 +19,8 @@
           <table class="table table-bordered text-center align-middle">
             <thead class="table-primary">
               <tr>
-                <th>No</th>
-                <th>Foto</th>
+                <th style="width: 5%">No</th>
+                <th style="width: 25%">Foto</th>
                 <th>Nama</th>
                 <th>Jabatan</th>
                 <th>No. HP</th>
@@ -28,22 +28,24 @@
             </thead>
             <tbody>
               @foreach ($data as $index => $anggota)
-              <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>
+              <tr style="height: 180px;"> {{-- 🔹 Tinggi baris menyesuaikan foto --}}
+                <td class="align-middle">{{ $index + 1 }}</td>
+                <td class="align-middle">
                   @if ($anggota->foto)
-                    <img src="{{ asset('storage/' . $anggota->foto) }}"
-                         alt="{{ $anggota->nama }}"
-                         width="60" height="60"
-                         class="rounded-circle"
-                         style="object-fit: cover;">
+                    <div class="d-flex justify-content-center">
+                      <img src="{{ asset('storage/' . $anggota->foto) }}"
+                           alt="{{ $anggota->nama }}"
+                           width="150" height="150"
+                           class="rounded-circle border border-3 border-primary shadow-sm"
+                           style="object-fit: cover; image-rendering: crisp-edges;">
+                    </div>
                   @else
                     <span class="text-muted">-</span>
                   @endif
                 </td>
-                <td>{{ $anggota->nama }}</td>
-                <td>{{ $anggota->jabatan }}</td>
-                <td>{{ $anggota->no_hp ?? '-' }}</td>
+                <td class="fw-semibold align-middle">{{ $anggota->nama }}</td>
+                <td class="align-middle">{{ $anggota->jabatan }}</td>
+                <td class="align-middle">{{ $anggota->no_hp ?? '-' }}</td>
               </tr>
               @endforeach
             </tbody>
