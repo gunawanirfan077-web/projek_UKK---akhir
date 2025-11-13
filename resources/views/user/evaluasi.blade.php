@@ -1,39 +1,51 @@
-@extends('layouts.user') <!-- Pastikan layout user sudah ada -->
+@extends('layouts.user')
 
-@section('title', 'Evaluasi Kegiatan')
+@section('title', 'Evaluasi Kegiatan OSIS')
 
 @section('content')
-<div class="container mt-4">
-    <h3 class="text-center mt-5">📊 Evaluasi Kegiatan</h3>
+<div class="container py-5" style="min-height: 100vh;">
+  
+  <!-- Card Utama -->
+  <div class="card shadow border-0">
 
-    @if($evaluasis->count() > 0)
-        <!-- 🔹 Card induk dengan jarak bawah -->
-        <div class="card shadow-sm mb-5"> <!-- mb-5 untuk memberi jarak bawah Card induk -->
-            <div class="card-body">
-                <div class="row g-3">
-                    @foreach($evaluasis as $e)
-                        <div class="col-md-6 col-lg-4">
-                            <!-- 🔹 Card untuk tiap evaluasi -->
-                            <div class="card h-100 border-secondary shadow-sm">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">{{ $e->nama_kegiatan }}</h5>
-                                    <p class="card-text mb-1"><strong>Tanggal:</strong> {{ $e->tanggal }}</p>
-                                    <p class="card-text mb-1"><strong>Hasil Evaluasi:</strong> {{ $e->hasil_evaluasi }}</p>
-                                    <p class="card-text mb-1"><strong>Penanggung Jawab:</strong> {{ $e->penanggung_jawab }}</p>
-                                    <p class="card-text mt-auto">
-                                        <span class="badge bg-{{ $e->status == 'baik' ? 'success' : ($e->status == 'perlu perbaikan' ? 'warning' : 'danger') }}">
-                                            {{ ucfirst($e->status) }}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+    <!-- Header -->
+    <div class="card-header bg-primary text-white text-center py-3">
+      <h4 class="mb-0">📊 Evaluasi Kegiatan OSIS SMP N 5 Pekalongan</h4>
+    </div>
+
+    <!-- Isi Card -->
+    <div class="card-body" style="background-color: #eaf2ff;">
+      <div class="row justify-content-center">
+        @forelse ($evaluasis as $e)
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body d-flex flex-column">
+                <h5 class="fw-bold text-primary">{{ $e->nama_kegiatan }}</h5>
+                <p class="text-muted small mb-2">
+                  <strong>Tanggal:</strong> {{ \Carbon\Carbon::parse($e->tanggal)->format('d M Y') }}
+                </p>
+                <p class="mb-1"><strong>Hasil Evaluasi:</strong> {{ $e->hasil_evaluasi }}</p>
+                <p class="mb-2"><strong>Penanggung Jawab:</strong> {{ $e->penanggung_jawab }}</p>
+                <div class="mt-auto">
+                  <span class="badge bg-{{ 
+                    $e->status == 'baik' ? 'success' : 
+                    ($e->status == 'perlu perbaikan' ? 'warning' : 'danger') 
+                  }}">
+                    {{ ucfirst($e->status) }}
+                  </span>
                 </div>
+              </div>
             </div>
-        </div>
-    @else
-        <p class="text-center text-muted mt-4">Belum ada data evaluasi.</p>
-    @endif
+          </div>
+        @empty
+          <div class="text-center text-muted py-5">
+            <p>Belum ada data evaluasi kegiatan.</p>
+          </div>
+        @endforelse
+      </div>
+    </div>
+
+  </div>
+
 </div>
 @endsection
