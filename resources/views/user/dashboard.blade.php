@@ -58,7 +58,7 @@
 <div class="container mt-5">
   <div class="card shadow-lg border-0">
 
-    <div class="card-header bg-warning text-dark text-center py-3">
+    <div class="card-header bg-primary text-dark text-center text-white py-3">
       <h3 class="m-0">PESAN KETUA OSIS</h3>
     </div>
 
@@ -66,7 +66,7 @@
 
       <!-- Foto Ketua -->
       <div class="me-md-4 mb-3 mb-md-0 text-center">
-        <img src="{{ asset('img/XII.jpg') }}" 
+        <img src="{{ asset('img/k.JPG') }}" 
              alt="Foto Ketua OSIS" 
              class="rounded-circle shadow"
              style="width: 160px; height: 160px; object-fit: cover;">
@@ -76,7 +76,7 @@
       <div>
         <h5 class="fw-bold mb-2">Nama Ketua OSIS</h5>
         <p class="text-secondary mb-0" style="text-align: justify;">
-          Assalamu’alaikum warahmatullahi wabarakatuh.  
+          Assalamu’alaikum warahmatullahi wabarakatuh.   
           Sebagai Ketua OSIS SMP Negeri 5 Pekalongan, saya mengajak seluruh siswa untuk bersama-sama membangun lingkungan sekolah yang aktif, disiplin, kreatif, serta penuh semangat kebersamaan.  
           Mari kita jadikan OSIS sebagai wadah untuk mengembangkan potensi diri dan berkontribusi dalam berbagai kegiatan positif demi menciptakan generasi yang unggul dan berprestasi.
         </p>
