@@ -5,12 +5,12 @@
 @section('content')
 <div class="container mt-5">
   <div class="card shadow-lg border-0 mx-auto" style="max-width: 900px; border-radius: 20px;">
-    <div class="row g-0 align-items-center">
+    <div class="row">
 
       <!-- 🔹 Foto & Nama -->
-      <div class="col-md-4 text-center bg-light p-4" style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+      <div class="col-md-4 text-center bg-info p-4" style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
         <img src="{{ asset('img/3.jpg') }}" alt="Foto Profil" class="rounded-circle mb-3"
-             style="width: 150px; height: 150px; object-fit: cover;">
+             style="width: 150px; height: 150px;">
 
         @php
           $user = session('user');
