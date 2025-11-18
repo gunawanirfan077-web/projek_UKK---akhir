@@ -44,7 +44,6 @@
 
   </div>
 
-
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
@@ -52,6 +51,40 @@
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
+</div>
+
+
+<!-- ===== PESAN KETUA OSIS ===== -->
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+
+    <div class="card-header bg-warning text-dark text-center py-3">
+      <h3 class="m-0">PESAN KETUA OSIS</h3>
+    </div>
+
+    <div class="card-body p-4 d-flex flex-column flex-md-row align-items-center">
+
+      <!-- Foto Ketua -->
+      <div class="me-md-4 mb-3 mb-md-0 text-center">
+        <img src="{{ asset('img/XII.jpg') }}" 
+             alt="Foto Ketua OSIS" 
+             class="rounded-circle shadow"
+             style="width: 160px; height: 160px; object-fit: cover;">
+      </div>
+
+      <!-- Pesan -->
+      <div>
+        <h5 class="fw-bold mb-2">Nama Ketua OSIS</h5>
+        <p class="text-secondary mb-0" style="text-align: justify;">
+          Assalamu’alaikum warahmatullahi wabarakatuh.  
+          Sebagai Ketua OSIS SMP Negeri 5 Pekalongan, saya mengajak seluruh siswa untuk bersama-sama membangun lingkungan sekolah yang aktif, disiplin, kreatif, serta penuh semangat kebersamaan.  
+          Mari kita jadikan OSIS sebagai wadah untuk mengembangkan potensi diri dan berkontribusi dalam berbagai kegiatan positif demi menciptakan generasi yang unggul dan berprestasi.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
 
@@ -111,12 +144,10 @@
         <p class="small mb-0">📞 0812-3456-7890</p>
       </div>
 
+    </div>
+
     <hr class="border-light">
-    
+
 </footer>
 
 @endsection
-
-
-
- 
