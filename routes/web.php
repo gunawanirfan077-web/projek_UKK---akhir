@@ -15,7 +15,8 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/', [UserDashboardController::class, 'index'])->name('user.dashboard');
 Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');
 Route::get('/profil', [AuthController::class, 'profil'])->name('profil');
