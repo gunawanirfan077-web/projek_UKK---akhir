@@ -3,11 +3,14 @@
 @section('title', 'Dashboard User')
 
 @section('content')
+
+<!-- ===== CAROUSEL ===== -->
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
   </div>
 
   <div class="carousel-inner">
@@ -41,16 +44,79 @@
 
   </div>
 
-  <!-- Tombol navigasi -->
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Sebelumnya</span>
+    <span class="carousel-control-prev-icon"></span>
   </button>
 
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Berikutnya</span>
+    <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+
+
+<!-- ===== VISI & MISI ===== -->
+<div class="container my-5">
+  <div class="card shadow-lg border-0">
+
+    <div class="card-header bg-primary text-white text-center py-3">
+      <h3 class="m-0">VISI & MISI OSIS</h3>
+    </div>
+
+    <div class="card-body p-4">
+
+      <!-- VISI -->
+      <h4 class="fw-bold">VISI</h4>
+      <p class="text-secondary">
+        Mewujudkan siswa SMP N 5 Pekalongan yang berkarakter, berprestasi, disiplin, dan berakhlak mulia.
+      </p>
+
+      <hr>
+
+      <!-- MISI -->
+      <h4 class="fw-bold">MISI</h4>
+      <ul class="text-secondary">
+        <li>Meningkatkan kegiatan akademik dan non-akademik siswa.</li>
+        <li>Menumbuhkan sikap kepemimpinan dan tanggung jawab.</li>
+        <li>Mendorong kreativitas siswa dalam berbagai bidang.</li>
+        <li>Menciptakan lingkungan sekolah yang aman dan nyaman.</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-primary text-white mt-5 pt-4 pb-3">
+  <div class="container">
+    <div class="row">
+
+      <!-- Deskripsi OSIS -->
+      <div class="col-md-6 mb-4 text-center text-md-start">
+        <h5 class="fw-bold mb-2">OSIS SMP N 5 Pekalongan</h5>
+        <p class="small mb-0">
+          Organisasi Siswa Intra Sekolah (OSIS) SMP Negeri 5 Pekalongan merupakan wadah untuk mengembangkan karakter,
+          kreativitas, kemampuan sosial, dan tanggung jawab siswa.
+          Melalui berbagai program kerja dan kegiatan positif, OSIS berkomitmen menciptakan lingkungan sekolah yang aktif,
+          inovatif, dan penuh nilai-nilai kedisiplinan serta kepemimpinan.
+        </p>
+      </div>
+
+      <!-- Kontak -->
+      <div class="col-md-6 mb-4 text-center text-md-end">
+        <h5 class="fw-bold mb-2">Kontak</h5>
+        <p class="small mb-1">📍 Jl. Sriwijaya, Pekalongan</p>
+        <p class="small mb-1">✉ osis@smpn5.sch.id</p>
+        <p class="small mb-0">📞 0812-3456-7890</p>
+      </div>
+
+    <hr class="border-light">
+    
+</footer>
+
 @endsection
 
+
+
+ 
