@@ -7,7 +7,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\EvaluasiController;
 use App\Http\Controllers\NotulenController;
-use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\UserController;
 
 
@@ -16,8 +15,8 @@ use App\Http\Controllers\UserController;
 
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::get('/', [UserDashboardController::class, 'index'])->name('user.dashboard');
-Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+Route::get('/', [UserController::class, 'index'])->name('user.dashboard');
+Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');
 Route::get('/profil', [AuthController::class, 'profil'])->name('profil');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
