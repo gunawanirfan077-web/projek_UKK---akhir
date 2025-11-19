@@ -4,10 +4,14 @@
 
 @section('content')
 <div class="container mt-4">
-
+    
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h3>📝 Daftar Notulen Kegiatan</h3>
-        <a href="{{ route('notulen.create') }}" class="btn btn-primary">+ Tambah Notulen</a>
+    </div>
+
+    <!-- Tombol Tambah Program -->
+    <div class="d-flex justify-content-end align-items-center mb-4">
+         <a href="{{ route('notulen.create') }}" class="btn btn-primary">+ Tambah Notulen</a>
     </div>
 
     @if(session('success'))
