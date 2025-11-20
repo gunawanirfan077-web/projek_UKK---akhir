@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class DataAnggotaController extends Controller
 {
@@ -32,9 +31,16 @@ class DataAnggotaController extends Controller
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
+        // Upload foto ke public/img
         if ($request->hasFile('foto')) {
-            $fotoPath = $request->file('foto')->store('img', 'public');
-            $validated['foto'] = $fotoPath;
+
+            $filename = time() . '.' . $request->foto->extension();
+
+            // Pindahkan file ke public/img
+            $request->foto->move(public_path('img'), $filename);
+
+            // simpan nama file saja
+            $validated['foto'] = $filename;
         }
 
         DataAnggota::create($validated);
@@ -62,12 +68,19 @@ class DataAnggotaController extends Controller
             'foto' => 'nullable|image|max:2048',
         ]);
 
+        // Jika ada upload foto baru
         if ($request->hasFile('foto')) {
-            if ($anggota->foto && Storage::disk('public')->exists($anggota->foto)) {
-                Storage::disk('public')->delete($anggota->foto);
+
+            // Hapus foto lama
+            if ($anggota->foto && file_exists(public_path('img/' . $anggota->foto))) {
+                unlink(public_path('img/' . $anggota->foto));
             }
-            $fotoPath = $request->file('foto')->store('img', 'public');
-            $validated['foto'] = $fotoPath;
+
+            // Upload foto baru
+            $filename = time() . '.' . $request->foto->extension();
+            $request->foto->move(public_path('img'), $filename);
+
+            $validated['foto'] = $filename;
         }
 
         $anggota->update($validated);
@@ -80,8 +93,9 @@ class DataAnggotaController extends Controller
     {
         $anggota = DataAnggota::findOrFail($id);
 
-        if ($anggota->foto && Storage::disk('public')->exists($anggota->foto)) {
-            Storage::disk('public')->delete($anggota->foto);
+        // Hapus file foto
+        if ($anggota->foto && file_exists(public_path('img/' . $anggota->foto))) {
+            unlink(public_path('img/' . $anggota->foto));
         }
 
         $anggota->delete();

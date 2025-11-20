@@ -33,7 +33,7 @@
                 <td class="align-middle">
                   @if ($anggota->foto)
                     <div class="d-flex justify-content-center">
-                      <img src="{{ asset('storage/' . $anggota->foto) }}"
+                      <img src="{{ asset('img/' . $anggota->foto) }}"
                            alt="{{ $anggota->nama }}"
                            width="150" height="150"
                            class="rounded-circle border border-3 border-primary shadow-sm"

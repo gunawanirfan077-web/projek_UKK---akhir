@@ -48,7 +48,9 @@
                     <td>{{ $index + 1 }}</td>
                     <td>
                         @if ($anggota->foto)
-                            <img src="{{ asset('storage/' . $anggota->foto) }}" alt="Foto" width="60" height="60" class="rounded-circle object-fit-cover">
+                            <img src="{{ asset('img/' . $anggota->foto) }}" 
+                                 alt="Foto" width="60" height="60" 
+                                 class="rounded-circle object-fit-cover">
                         @else
                             <span class="text-muted">Tidak ada</span>
                         @endif
