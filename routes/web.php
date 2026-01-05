@@ -65,13 +65,12 @@ Route::delete('/notulen/{id}', [NotulenController::class, 'destroy'])->name('not
 Route::get('/notulen/{id}', [NotulenController::class, 'show'])->name('notulen.show');
 
 
-// 🔹 User: Anggota
+
 Route::get('/user/anggota', [UserController::class, 'anggota'])->name('user.anggota');
-// 🔹 User: Rapat
 Route::get('/user/rapat', [UserController::class, 'rapat'])->name('user.rapat');
 Route::get('/user/program', [UserController::class, 'program'])->name('user.program');
 Route::get('/user/evaluasi', [UserController::class, 'evaluasi'])->name('user.evaluasi');
- Route::get('/user/notulen', [UserController::class, 'notulen'])->name('notulen');
+Route::get('/user/notulen', [UserController::class, 'notulen'])->name('notulen');
 
 
 
