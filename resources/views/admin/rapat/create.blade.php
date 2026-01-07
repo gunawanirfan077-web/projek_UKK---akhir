@@ -47,21 +47,12 @@
 
         <!-- Tombol Aksi -->
         <div class="text-end">
-        <a href="{{ route('rapat.index') }}" class="btn btn-secondary">Batal</a>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+          <a href="{{ route('rapat.index') }}" class="btn btn-secondary">Batal</a>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
 
       </form>
     </div>
   </div>
-
-  <!-- 🔹 Tombol ke Detail (muncul setelah menambah data) -->
-  @if(session('rapat_id'))
-    <div class="text-center mt-4">
-      <a href="{{ route('rapat.show', session('rapat_id')) }}" class="btn btn-success rounded-pill px-4">
-        <i class="bi bi-eye"></i> Lihat Detail Rapat yang Baru Ditambahkan
-      </a>
-    </div>
-  @endif
-
 </div>
 @endsection
