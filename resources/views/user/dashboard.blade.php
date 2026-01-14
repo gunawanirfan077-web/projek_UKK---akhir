@@ -137,12 +137,13 @@
       </div>
 
       <!-- Kontak -->
-      <div class="col-md-6 mb-4 text-center text-md-end">
-        <h5 class="fw-bold mb-2">Kontak</h5>
-        <p class="small mb-1">📍 Jl. Sriwijaya, Pekalongan</p>
-        <p class="small mb-1">✉ osis@smpn5.sch.id</p>
-        <p class="small mb-0">📞 0812-3456-7890</p>
-      </div>
+    <div class="col-md-6 mb-4 text-center text-md-end">
+      <h5 class="fw-bold mb-2 fs-4">Kontak</h5>
+      <p class="mb-1 fs-5">📍 Jl. Sriwijaya, Pekalongan</p>
+      <p class="mb-1 fs-5">✉ osis@smpN5.sch.id</p>
+      <p class="mb-0 fs-5">📞 0812-3456-7890</p>
+    </div>
+
 
     </div>
 
