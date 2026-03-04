@@ -8,12 +8,10 @@
         <h3>📊 Daftar Evaluasi Kegiatan</h3>
     </div>
 
-    <!-- Tombol Tambah Evaluasi -->
     <div class="d-flex justify-content-end align-items-center mb-4">
         <a href="{{ route('evaluasi.create') }}" class="btn btn-primary me-2">+ Tambah Evaluasi</a>
     </div>
 
-    <!-- Alerts -->
     @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
             {{ session('success') }}
@@ -28,7 +26,6 @@
         </div>
     @endif
 
-    <!-- Tabel Evaluasi -->
     <table class="table table-bordered table-hover table-sm align-middle text-center mb-0">
         <thead class="table-primary text-dark">
             <tr>

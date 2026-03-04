@@ -9,12 +9,10 @@
         <h3>👥 Data Anggota</h3>
     </div>
 
-    <!-- Tombol Tambah Anggota -->
     <div class="d-flex justify-content-end align-items-center mb-4">
         <a href="{{ route('data_anggota.create') }}" class="btn btn-primary me-2">+ Tambah Anggota</a>
     </div>
 
-    <!-- Alerts -->
     @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
             {{ session('success') }}
@@ -29,7 +27,6 @@
         </div>
     @endif
 
-    <!-- Tabel Anggota -->
     <table class="table table-bordered table-hover align-middle text-center mb-0">
         <thead class="table-primary text-dark">
             <tr>

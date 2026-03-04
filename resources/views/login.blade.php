@@ -12,7 +12,6 @@
     <img src="{{ asset('img/2.png') }}" alt="Logo Login">
     <h2>Login Admin</h2>
 
-    <!-- 🔹 Gunakan route yang sesuai dengan controller -->
     <form method="POST" action="{{ route('login.process') }}">
       @csrf
       <input type="text" name="username" placeholder="Username" required>

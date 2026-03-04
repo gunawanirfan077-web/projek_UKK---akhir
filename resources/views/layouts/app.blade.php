@@ -12,7 +12,6 @@
 <body>
 
 
-  <!-- Sidebar -->
   <div class="sidebar bg-primary">
     <h2 class="text-white mb-4">Admin Panel</h2>
 
@@ -23,16 +22,13 @@
     <a href="{{ route('evaluasi.index') }}" class="text-white">📊 Evaluasi</a>
     <a href="{{ route('notulen.index') }}" class="text-white">📘 Notulen Kegiatan</a>
 
-    <!-- 🔹 Logout pakai GET sementara (biar tidak error CSRF jika belum ada POST route) -->
     <form action="{{ route('logout') }}" method="GET">
       <button type="submit" class="logout-btn">Logout</button>
     </form>
   </div>
 
-  <!-- Konten -->
   <div class="content">
 
-    <!-- 🔹 Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold">🏫 HALAMAN OSIS</a>
@@ -50,19 +46,16 @@
       </div>
     </nav>
 
-    <!-- Isi konten utama -->
     <div class="menu-content mt-4 px-3">
       @yield('content')
     </div>
 
-    <!-- 🔹 Footer -->
     <footer class="text-center py-3 mt-4 border-top">
       <small>© {{ date('Y') }} Organisasi OSIS | SMP N5</small>
     </footer>
 
   </div>
 
-    <!-- Script Bootstrap Offline -->
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

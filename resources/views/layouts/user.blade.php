@@ -9,7 +9,6 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-3" href="#">
@@ -32,17 +31,14 @@
     </div>
   </nav>
 
-  <!-- Isi Halaman -->
   <main class="flex-grow-1">
     @yield('content')
   </main>
 
-  <!-- Footer -->
   <footer class="bg-primary text-white text-center py-3 mt-auto">
     <p class="mb-0">&copy; {{ date('Y') }} OSIS SMP Negeri 5 Pekalongan</p>
   </footer>
 
-  <!-- JS -->
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
