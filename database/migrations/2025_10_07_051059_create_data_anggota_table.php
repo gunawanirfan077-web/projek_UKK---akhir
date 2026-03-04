@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->string('nama', 64);
             $table->string('jabatan', 50);
             $table->string('no_hp', 15)->nullable();
-            $table->string('foto')->nullable(); // tambahkan kolom foto
+            $table->string('foto')->nullable(); 
             $table->timestamps();
         });
     }

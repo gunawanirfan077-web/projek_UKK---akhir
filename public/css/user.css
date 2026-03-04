@@ -4,7 +4,6 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Navbar */
     .navbar {
       background-color: #0d6efd;
       display: flex;
@@ -29,7 +28,6 @@
       height: auto;
     }
 
-    /* Menu */
     .navbar-nav {
       display: flex;
       gap: 15px;
@@ -39,16 +37,15 @@
 
     .navbar-nav .nav-link {
     color: white;
-    text-decoration: none;  /* hilangkan garis */
+    text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
     }
 
     .navbar-nav .nav-link:hover {
-      color: #dce6ff;          /* efek hover halus tanpa garis */
-      text-decoration: none;   /* pastikan tetap tanpa garis */
+      color: #dce6ff;
+      text-decoration: none;
     }
-    /* Carousel full layar */
     .carousel,
     .carousel-inner,
     .carousel-item,
@@ -80,7 +77,6 @@
       text-align: center;
     }
 
-    /* Footer */
     footer {
       background-color: #0d6efd;
       color: white;
