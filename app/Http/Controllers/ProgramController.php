@@ -7,27 +7,23 @@ use Illuminate\Http\Request;
 
 class ProgramController extends Controller
 {
-    // 🔹 Tampilkan semua program kerja
     public function index()
     {
-        $programs = Program::orderBy('id', 'asc')->get(); // Ambil semua data tanpa search
+        $programs = Program::orderBy('id', 'asc')->get(); 
         return view('admin.program.index', compact('programs'));
     }
 
-    // 🔹 Tampilkan detail program kerja (show)
     public function show($id)
     {
         $program = Program::findOrFail($id);
         return view('admin.program.show', compact('program'));
     }
 
-    // 🔹 Halaman tambah program kerja
     public function create()
     {
         return view('admin.program.create');
     }
 
-    // 🔹 Simpan program kerja baru
     public function store(Request $request)
     {
         $request->validate([
@@ -43,14 +39,12 @@ class ProgramController extends Controller
         return redirect()->route('program.index')->with('success', 'Program kerja berhasil ditambahkan!');
     }
 
-    // 🔹 Halaman edit program kerja
     public function edit($id)
     {
         $program = Program::findOrFail($id);
         return view('admin.program.edit', compact('program'));
     }
 
-    // 🔹 Update data program kerja
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -67,7 +61,6 @@ class ProgramController extends Controller
         return redirect()->route('program.index')->with('success', 'Program kerja berhasil diperbarui!');
     }
 
-    // 🔹 Hapus program kerja
     public function destroy($id)
     {
         $program = Program::findOrFail($id);

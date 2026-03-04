@@ -7,20 +7,17 @@ use Illuminate\Http\Request;
 
 class NotulenController extends Controller
 {
-    // 🔹 Tampilkan daftar notulen (tanpa search)
     public function index()
     {
         $notulen = Notulen::orderBy('id', 'asc')->get();
         return view('admin.notulen.index', compact('notulen'));
     }
 
-    // 🔹 Halaman tambah notulen
     public function create()
     {
         return view('admin.notulen.create');
     }
 
-    // 🔹 Simpan notulen baru
     public function store(Request $request)
     {
         $request->validate([
@@ -37,21 +34,18 @@ class NotulenController extends Controller
         return redirect()->route('notulen.index')->with('success', 'Notulen berhasil ditambahkan!');
     }
 
-    // 🔹 Lihat detail notulen
     public function show($id)
     {
         $notulen = Notulen::findOrFail($id);
         return view('admin.notulen.show', compact('notulen'));
     }
 
-    // 🔹 Halaman edit notulen
     public function edit($id)
     {
         $notulen = Notulen::findOrFail($id);
         return view('admin.notulen.edit', compact('notulen'));
     }
 
-    // 🔹 Update data notulen
     public function update(Request $request, $id)
     {
         $notulen = Notulen::findOrFail($id);
@@ -70,7 +64,6 @@ class NotulenController extends Controller
         return redirect()->route('notulen.index')->with('success', 'Notulen berhasil diperbarui!');
     }
 
-    // 🔹 Hapus notulen
     public function destroy($id)
     {
         $notulen = Notulen::findOrFail($id);

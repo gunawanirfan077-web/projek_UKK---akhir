@@ -7,21 +7,17 @@ use App\Models\Evaluasi;
 
 class EvaluasiController extends Controller
 {
-    // 🔹 Menampilkan daftar evaluasi
     public function index()
     {
-        // Ambil semua data evaluasi, urut berdasarkan ID
         $evaluasis = Evaluasi::orderBy('id', 'asc')->get();
         return view('admin.evaluasi.index', compact('evaluasis'));
     }
 
-    // 🔹 Form tambah evaluasi
     public function create()
     {
         return view('admin.evaluasi.create');
     }
 
-    // 🔹 Simpan data evaluasi baru
     public function store(Request $request)
     {
         $request->validate([
@@ -37,14 +33,12 @@ class EvaluasiController extends Controller
         return redirect()->route('evaluasi.index')->with('success', 'Data evaluasi berhasil ditambahkan!');
     }
 
-    // 🔹 Form edit evaluasi
     public function edit($id)
     {
         $evaluasi = Evaluasi::findOrFail($id);
         return view('admin.evaluasi.edit', compact('evaluasi'));
     }
 
-    // 🔹 Update data evaluasi
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -61,7 +55,6 @@ class EvaluasiController extends Controller
         return redirect()->route('evaluasi.index')->with('success', 'Data evaluasi berhasil diperbarui!');
     }
 
-    // 🔹 Hapus evaluasi
     public function destroy($id)
     {
         $evaluasi = Evaluasi::findOrFail($id);

@@ -32,13 +32,11 @@ class AuthController extends Controller
         ];
     }
 
-    // 🔹 Halaman login
     public function index()
     {
         return view('login');
     }
 
-    // 🔹 Proses login
     public function login(Request $request)
     {
         $request->validate([
@@ -61,14 +59,12 @@ class AuthController extends Controller
         return back()->withErrors(['error' => 'Username atau password salah!']);
     }
 
-    // 🔹 Logout
     public function logout()
     {
         Session::flush();
         return redirect()->route('login');
     }
 
-    // 🔹 Profil
     public function profil()
     {
         if (!Session::has('user')) {
