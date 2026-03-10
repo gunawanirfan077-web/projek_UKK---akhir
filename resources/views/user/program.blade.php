@@ -5,15 +5,12 @@
 @section('content')
 <div class="container py-5" style="min-height: 100vh;">
   
-  <!-- Card Utama -->
   <div class="card shadow border-0">
     
-    <!-- Header -->
     <div class="card-header bg-primary text-white text-center py-3">
       <h4 class="mb-0">📋 Program Kerja OSIS SMP N 5 Pekalongan</h4>
     </div>
 
-    <!-- Isi Card -->
     <div class="card-body" style="background-color: #eaf2ff;">
       <div class="row justify-content-center">
         @forelse ($program as $program)

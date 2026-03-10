@@ -4,7 +4,7 @@
 
 @section('content')
 
-<!-- ===== CAROUSEL ===== -->
+
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
 
   <div class="carousel-indicators">
@@ -15,7 +15,6 @@
 
   <div class="carousel-inner">
 
-    <!-- Slide 1 -->
     <div class="carousel-item active">
       <img src="{{ asset('img/a.jpg') }}" class="d-block w-100 full-image" alt="Gambar 1">
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
@@ -24,7 +23,6 @@
       </div>
     </div>
 
-    <!-- Slide 2 -->
     <div class="carousel-item">
       <img src="{{ asset('img/b.jpg') }}" class="d-block w-100 full-image" alt="Gambar 2">
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
@@ -33,7 +31,6 @@
       </div>
     </div>
 
-    <!-- Slide 3 -->
     <div class="carousel-item">
       <img src="{{ asset('img/c.jpg') }}" class="d-block w-100 full-image" alt="Gambar 3">
       <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
@@ -54,7 +51,6 @@
 </div>
 
 
-<!-- ===== PESAN KETUA OSIS ===== -->
 <div class="container mt-5">
   <div class="card shadow-lg border-0">
 
@@ -64,7 +60,6 @@
 
     <div class="card-body p-4 d-flex flex-column flex-md-row align-items-center">
 
-      <!-- Foto Ketua -->
       <div class="me-md-4 mb-3 mb-md-0 text-center">
         <img src="{{ asset('img/k.JPG') }}" 
              alt="Foto Ketua OSIS" 
@@ -72,7 +67,6 @@
              style="width: 160px; height: 160px; object-fit: cover;">
       </div>
 
-      <!-- Pesan -->
       <div>
         <h5 class="fw-bold mb-2">Nama Ketua OSIS</h5>
         <p class="text-secondary mb-0" style="text-align: justify;">
@@ -88,7 +82,6 @@
 </div>
 
 
-<!-- ===== VISI & MISI ===== -->
 <div class="container my-5">
   <div class="card shadow-lg border-0">
 
@@ -98,7 +91,6 @@
 
     <div class="card-body p-4">
 
-      <!-- VISI -->
       <h4 class="fw-bold">VISI</h4>
       <p class="text-secondary">
         Mewujudkan siswa SMP N 5 Pekalongan yang berkarakter, berprestasi, disiplin, dan berakhlak mulia.
@@ -106,7 +98,6 @@
 
       <hr>
 
-      <!-- MISI -->
       <h4 class="fw-bold">MISI</h4>
       <ul class="text-secondary">
         <li>Meningkatkan kegiatan akademik dan non-akademik siswa.</li>
@@ -120,12 +111,10 @@
 </div>
 
 
-<!-- ===== FOOTER ===== -->
 <footer class="bg-primary text-white mt-5 pt-4 pb-3">
   <div class="container">
     <div class="row">
 
-      <!-- Deskripsi OSIS -->
       <div class="col-md-6 mb-4 text-center text-md-start">
         <h5 class="fw-bold mb-2">OSIS SMP N 5 Pekalongan</h5>
         <p class="small mb-0">
@@ -136,7 +125,6 @@
         </p>
       </div>
 
-      <!-- Kontak -->
     <div class="col-md-6 mb-4 text-center text-md-end">
       <h5 class="fw-bold mb-2 fs-4">Kontak</h5>
       <p class="mb-1 fs-5">📍 Jl. Sriwijaya, Pekalongan</p>

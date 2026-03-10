@@ -28,7 +28,7 @@
             </thead>
             <tbody>
               @foreach ($data as $index => $anggota)
-              <tr style="height: 180px;"> {{-- 🔹 Tinggi baris menyesuaikan foto --}}
+              <tr style="height: 180px;"> 
                 <td class="align-middle">{{ $index + 1 }}</td>
                 <td class="align-middle">
                   @if ($anggota->foto)
